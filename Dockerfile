@@ -11,6 +11,10 @@ FROM ghcr.io/dgtlmoon/changedetection.io:0.55.7
 # changedetection.io reads PORT from the environment natively — no wrapper needed.
 EXPOSE 5000
 
+# Default runtime configuration
+ENV USE_X_SETTINGS=1
+
+
 # Health check — hits the main page to confirm the Flask app is responding
 HEALTHCHECK --interval=30s --timeout=10s --start-period=15s --retries=3 \
     CMD python -c "import urllib.request, os; urllib.request.urlopen(f'http://localhost:{os.getenv(\"PORT\", \"5000\")}/')" || exit 1
