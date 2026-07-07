@@ -9,6 +9,12 @@
     "healthcheckPath": "/",
     "healthcheckTimeout": 100,
     "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
+    "restartPolicyMaxRetries": 10,
+    "volumeMounts": [
+      {
+        "name": "changedetection-datastore",
+        "mountPath": "/datastore"
+      }
+    ]
   }
 }
