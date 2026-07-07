@@ -5,14 +5,14 @@
 </div>
 
 <p align="center">
-  <a href="https://railway.com/template/changedetection-io"><img src="https://img.shields.io/badge/Deploy%20on-Railway-%236C3FC5?style=for-the-badge&logo=railway&logoColor=white" alt="Deploy on Railway"></a>
+  <a href="https://railway.com/new/template/changedetectionio-1"><img src="https://img.shields.io/badge/Deploy%20on-Railway-%236C3FC5?style=for-the-badge&logo=railway&logoColor=white" alt="Deploy on Railway"></a>
   <a href="https://github.com/dgtlmoon/changedetection.io"><img src="https://img.shields.io/github/stars/dgtlmoon/changedetection.io?style=for-the-badge&logo=github&label=GitHub" alt="GitHub Stars"></a>
   <a href="https://github.com/dgtlmoon/changedetection.io/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/dgtlmoon/changedetection.io?style=for-the-badge" alt="License"></a>
   <a href="https://hub.docker.com/r/dgtlmoon/changedetection.io"><img src="https://img.shields.io/docker/pulls/dgtlmoon/changedetection.io?style=for-the-badge&logo=docker&label=Docker%20Pulls" alt="Docker Pulls"></a>
 </p>
 
 <div align="center">
-  <img src="./og-image.svg" alt="changedetection.io Deploy on Railway" width="600">
+  <img src="https://raw.githubusercontent.com/INAPP-Mobile/railway-changedetection.io/main/og-image.svg" alt="changedetection.io Deploy on Railway" width="600">
 </div>
 
 ---
@@ -34,7 +34,7 @@
 
 ### One-Click Deploy
 
-[![Deploy on Railway](https://img.shields.io/badge/Deploy%20on-Railway-%236C3FC5?style=for-the-badge&logo=railway&logoColor=white)](https://railway.com/template/changedetection-io)
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.com/new/template/changedetectionio-1)
 
 Click the button above to deploy changedetection.io instantly on Railway.
 
@@ -127,52 +127,9 @@ open http://localhost:5000
 
 ### Using Docker Compose
 
-```yaml
-services:
-  changedetection:
-    build: .
-    ports:
-      - "5000:5000"
-    environment:
-      - USE_X_SETTINGS=1
-      - PORT=5000
-    volumes:
-      - changedetection-data:/datastore
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request, os; urllib.request.urlopen(f'http://localhost:{os.getenv(\"PORT\", \"5000\")}/')", "||", "exit", "1"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 15s
+See the GitHub repo for docker-compose.yml examples.
 
-volumes:
-  changedetection-data:
-```
-
-### Adding a Browser Fetcher (Playwright)
-
-For monitoring JavaScript-rendered websites, add a Playwright browser service:
-
-```yaml
-services:
-  changedetection:
-    # ... (same as above)
-    depends_on:
-      browser:
-        condition: service_started
-    environment:
-      - PLAYWRIGHT_DRIVER_URL=ws://browser:3000
-
-  browser:
-    image: dgtlmoon/sockpuppetbrowser:latest
-    cap_add:
-      - SYS_ADMIN
-    environment:
-      - SCREEN_WIDTH=1920
-      - SCREEN_HEIGHT=1024
-      - SCREEN_DEPTH=16
-      - MAX_CONCURRENT_CHROME_PROCESSES=10
-```
+For JavaScript-rendered pages, add a Playwright browser service (see repo for config).
 
 ## 🔧 Troubleshooting
 
@@ -205,3 +162,29 @@ This template deploys [changedetection.io](https://github.com/dgtlmoon/changedet
 <p align="center">
   <sub>Built by <a href="https://github.com/INAPP-Mobile">INAPP-Mobile</a> — Deploy your own website change monitoring service in minutes.</sub>
 </p>
+
+# Deploy and Host
+
+One-click deploy on Railway. Single container, built-in SQLite. TLS at edge, auto-restart.
+
+## About Hosting
+
+Single container with SQLite. No external DB needed.
+
+## Why Deploy
+
+- One-click deploy, zero setup
+- Single container, no external DB
+- Auto HTTPS via Railway
+
+## Common Use Cases
+
+
+## Dependencies for
+
+Changedetection.io uses SQLite — no external database required.
+
+
+### Deployment Dependencies
+
+Changedetection.io uses SQLite — no external database required.
