@@ -1,0 +1,32 @@
+{
+  "PORT": {
+    "defaultValue": "5000",
+    "description": "HTTP listen port (default: 5000). Railway sets this automatically.",
+    "isOptional": true
+  },
+  "BASE_URL": {
+    "defaultValue": "",
+    "description": "Public URL of your instance (e.g., https://your-app.up.railway.app). Appears in notification alerts.",
+    "isOptional": true
+  },
+  "LOGGER_LEVEL": {
+    "defaultValue": "DEBUG",
+    "description": "Log level: TRACE, DEBUG, INFO, SUCCESS, WARNING, ERROR, CRITICAL.",
+    "isOptional": true
+  },
+  "FETCH_WORKERS": {
+    "defaultValue": "10",
+    "description": "Number of parallel fetch workers for monitoring checks (default: 10).",
+    "isOptional": true
+  },
+  "TZ": {
+    "defaultValue": "UTC",
+    "description": "Timezone for scheduled checking (e.g., America/New_York, Europe/London).",
+    "isOptional": true
+  },
+  "DISABLE_VERSION_CHECK": {
+    "defaultValue": "false",
+    "description": "Set to true to disable telemetry and version check.",
+    "isOptional": true
+  }
+}
