@@ -1,11 +1,11 @@
 # =============================================================================
 #  Dockerfile — changedetection.io for Railway
-#  Pinned to upstream v0.55.7
+#  Pinned to upstream v0.55.8
 #  Source: https://github.com/dgtlmoon/changedetection.io
 #  Image: https://github.com/dgtlmoon/changedetection.io/pkgs/container/changedetection.io
 # =============================================================================
 
-FROM ghcr.io/dgtlmoon/changedetection.io:0.55.7
+FROM ghcr.io/dgtlmoon/changedetection.io:0.55.8
 
 # Railway assigns a dynamic PORT at runtime.
 # changedetection.io reads PORT from the environment natively — no wrapper needed.
