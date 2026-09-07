@@ -5,7 +5,7 @@
 #  Image: https://github.com/dgtlmoon/changedetection.io/pkgs/container/changedetection.io
 # =============================================================================
 
-FROM ghcr.io/dgtlmoon/changedetection.io:0.55.8
+FROM ghcr.io/dgtlmoon/changedetection.io:0.60.3
 
 # Railway assigns a dynamic PORT at runtime.
 # changedetection.io reads PORT from the environment natively — no wrapper needed.
